@@ -1,0 +1,23 @@
+<?xml version   ="1.0" encoding="UTF-8" ?>
+<widget xmlns   = "http://www.w3.org/ns/widgets"
+    xmlns:gap   = "http://phonegap.com/ns/1.0"
+    id          = "br.com.antoniodesouza.phonegap.filedownload"
+    versioncode = "1"
+    version     = "1.0.0">
+    
+    <name>File Download</name>
+    
+    <content src="index.html"/>
+    
+    <description>
+        Aplicação Teste
+    </description>
+    
+    <author href="http://antoniodesouza.com.br"  email="contato@antoniodesouza.com.br">
+        Antonio de Souza
+    </author>
+        
+    <preference name="phonegap-version" value="2.9.1" />
+    <preference name="orientation" value="portrait" />
+	
+</widget>
