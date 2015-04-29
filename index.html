@@ -2,7 +2,8 @@
     <head>
         <meta charset="utf-8" />
         <meta name="format-detection" content="telephone=no" />
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <meta name="viewport" content="width=400, user-scalable=no">
+        
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <title>PhoneGap filedownload</title>
         
@@ -21,6 +22,33 @@
 			}
  
 			function downloadFile(){
+				
+				var fileTransfer = new FileTransfer();
+				var uri = encodeURI("http://www.pa.senac.br/sites/default/files/ascom/Modelos_de_curriculo.pdf");
+				var fileURL = "file:///data/data/br.com.antoniodesouza.phonegap.filedownload/arquivo.pdf";
+				fileTransfer.download(
+				    uri,
+				    fileURL,
+				    function(entry) {
+				        console.log("download complete: " + entry.toURL());
+				        showLink(entry.toURI());
+				        
+				        
+				    },
+				    function(error) {
+				        console.log("download error source " + error.source);
+				        console.log("download error target " + error.target);
+				        console.log("upload error code" + error.code);
+				    },
+				    false,
+				    {
+				        headers: {
+				            "Authorization": "Basic dGVzdHVzZXJuYW1lOnRlc3RwYXNzd29yZA=="
+				        }
+				    }
+				);
+				
+				/*
 				window.requestFileSystem(
 							 LocalFileSystem.PERSISTENT, 0, 
 							 function onFileSystemSuccess(fileSystem) {
@@ -51,6 +79,7 @@
 										 fail);
 							 }, 
 							 fail);
+					 */
  
 			}
  
