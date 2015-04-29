@@ -30,6 +30,8 @@
 										 var sPath = fileEntry.fullPath.replace("dummy.html","");
 										 var fileTransfer = new FileTransfer();
 										 fileEntry.remove();
+										 
+										 console.log(sPath);
  
 										 fileTransfer.download(
 												   /*"http://www.w3.org/2011/web-apps-ws/papers/Nitobi.pdf",*/
